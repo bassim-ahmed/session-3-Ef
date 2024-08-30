@@ -7,7 +7,7 @@ namespace session_3_Ef
     {
         static void Main(string[] args)
         {
-            DBAppContext context = new DBAppContext();
+            //DBAppContext context = new DBAppContext();
             #region Explicit Loading
             //var Employee = context.Employees.FirstOrDefault(e => e.Id == 3);
             //context.Entry(Employee).Reference(e => e.WorkFor).Load();
@@ -62,6 +62,27 @@ namespace session_3_Ef
             //{
             //    Console.WriteLine(item.Name);
             //}
+            #endregion
+
+            #region Join
+            using DBAppContext context = new DBAppContext();
+            //var result= context.Employees.Join(context.Departments, E => E.DeptID, D => D.Id, (E, D) => new {E.Id,E.Name,D.Name,D.Id});
+            //var Result = from E in context.Employees
+            //             join D in context.Departments
+            //             on E.DeptID equals D.Id
+            //             select new
+            //             {
+            //                 EmpID = E.Id,
+            //                 EmpName = E.Name,
+            //                 DepartmentName = D.Name,
+            //             };
+            //foreach(var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
             #endregion
 
         }
